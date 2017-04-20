@@ -1,6 +1,6 @@
 Role Name
 =========
 
-A role for installing kubelet on ubuntu.
+A role for installing kubeadm system on ubuntu.
 
 Todo...
