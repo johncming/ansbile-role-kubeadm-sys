@@ -26,3 +26,7 @@
     - kubeadm
     - kubectl
     - kubernetes-cni
+
+- user:
+    name: "{{ ansible_ssh_user }}"
+    groups: docker
