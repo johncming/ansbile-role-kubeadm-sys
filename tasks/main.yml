@@ -1,2 +1,28 @@
 ---
 # tasks file for kubelet
+
+- apt:
+    name: apt-transport-https
+    update_cache: yes
+
+- apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    update_cache: yes
+
+- apt:
+    name: docker-engine
+    state: present
+
+- apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - kubelet
+    - kubeadm
+    - kubectl
+    - kubernetes-cni
